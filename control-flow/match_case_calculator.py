@@ -1,33 +1,28 @@
-# match_case_calculator.py
-def calculator():
-    try:
-        # Prompt for user input
-        num1 = float(input("Enter the first number: "))
-        num2 = float(input("Enter the second number: "))
-        operation = input("Choose the operation (+, -, *, /): ")
+#author: Blessing Ebele Anochili
+#date: 18/09/2024
+#purpose: This calculator will prompt the user to enter two numbers and select an operation (addition, subtraction, multiplication, or division). The script will then perform the selected operation using a Match Case statement and display the result.
 
-        # Perform the calculation using Match Case
-        match operation:
-            case "+":
-                result = num1 + num2
-                print(f"The result is {result}.")
-            case "-":
-                result = num1 - num2
-                print(f"The result is {result}.")
-            case "*":
-                result = num1 * num2
-                print(f"The result is {result}.")
-            case "/":
-                if num2 != 0:
-                    result = num1 / num2
-                    print(f"The result is {result}.")
-                else:
-                    print("Cannot divide by zero.")
-            case _:
-                print("Invalid operation selected. Please choose one of +, -, *, or /.")
+#collecting input from user
+num1 = float(input("Enter the first number:"))
+num2 = float(input("Enter the second number:"))
 
-    except ValueError:
-        print("Please enter valid numbers.")
+operation = input("Choose the operation (+, -, *, /):.")
 
-if __name__ == "__main__":
-    calculator()
+match operation:
+    case "+":
+        result = num1 + num2
+        print("The result is", result)
+    case "-":
+        result = num1 - num2
+        print("The result is", result)
+    case "*":
+        result = num1 * num2
+        print("The result is", result)
+    case "/":
+        if num2 != 0:
+            result = num1 / num2
+            print("The result is", result)
+        else:
+            print("Cannot divide by zero.")
+    case _:
+	    print("Invalid operation selected. please choose one of +, -, *, or /.")
