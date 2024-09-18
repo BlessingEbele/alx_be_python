@@ -6,7 +6,7 @@
 num1 = float(input("Enter the first number:"))
 num2 = float(input("Enter the second number:"))
 
-choice_operation = input("Choose the operation (+, -, *, /):.")
+choose_the_operation = input("Choose the operation (+, -, *, /):.")
 result = 
  match choice_operation
 case _ if choice_operation == + 
