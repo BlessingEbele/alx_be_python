@@ -4,9 +4,12 @@
 
 # shopping_list_manager.py
 
+# fns_and_dsa/shopping_list_manager.py
+
 def display_menu():
     """Displays the menu options for the shopping list manager."""
-    print("\nShopping List Manager")
+    # Ensure the correct print statement format
+    print(f"Shopping List Manager")
     print("1. Add Item")
     print("2. Remove Item")
     print("3. View List")
