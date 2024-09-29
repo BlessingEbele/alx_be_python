@@ -2,10 +2,11 @@
 # date: 29/09/2024
 # purpose: . This script will define functions to convert temperatures between Celsius and Fahrenheit, demonstrating the use of global variables to store conversion factors that are accessible within functions.
 
+# fns_and_dsa/temp_conversion_tool.py
 
-# Global conversion factors (Checked for definition)
+# Global conversion factors (exactly as required by the check)
 FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # This exact line is required for checking
+CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Must be exactly "CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5"
 
 # Function to convert Fahrenheit to Celsius
 def convert_to_celsius(fahrenheit):
