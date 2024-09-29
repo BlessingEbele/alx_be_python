@@ -1,42 +1,63 @@
 # athour: Anochili Blessing Ebele
 # date: 29/09/2024
-# purpuse : This script will define functions to convert temperatures between Celsius and Fahrenheit, demonstrating the use of global variables to store conversion factors that are accessible within functions.
+# purpose: This script will demonstrate your ability to use the datetime module for handling dates and times in Python.
 
+# Check that datetime module is imported
+import datetime
 
+# Part 1: Display the current date and time
+def display_current_datetime():
+    """Displays the current date and time in a formatted string."""
+    # Save the current date and time
+    current_date = datetime.datetime.now()
 
-# Global conversion factor
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9  # Only this conversion factor is defined
+    # Format the current date and time as 'YYYY-MM-DD HH:MM:SS'
+    formatted_date = current_date.strftime("%Y-%m-%d %H:%M:%S")
 
-def fahrenheit_to_celsius(fahrenheit):
-    """Converts Fahrenheit to Celsius."""
-    celsius = (fahrenheit - 32) * FAHRENHEIT_TO_CELSIUS_FACTOR
-    return celsius
+    # Print the formatted date and time
+    print(f"Current date and time: {formatted_date}")
+    return formatted_date
 
-def celsius_to_fahrenheit(celsius):
-    """Converts Celsius to Fahrenheit."""
-    # Directly using the formula without defining CELSIUS_TO_FAHRENHEIT_FACTOR
-    fahrenheit = celsius * (9 / 5) + 32
-    return fahrenheit
+# Part 2: Calculate a future date
+def calculate_future_date(days_to_add):
+    """Calculates the future date by adding the specified number of days."""
+    # Save the current date
+    current_date = datetime.datetime.now().date()
 
+    # Add the specified number of days to the current date using timedelta
+    future_date = current_date + datetime.timedelta(days=days_to_add)
+
+    # Format the future date as 'YYYY-MM-DD'
+    formatted_future_date = future_date.strftime("%Y-%m-%d")
+
+    # Print the future date
+    print(f"Future date: {formatted_future_date}")
+    return formatted_future_date
+
+# Main function to run the script
 def main():
-    """Main function to interact with the user and perform temperature conversions."""
+    """Main function to display current date and time, and calculate a future date."""
+    # Check if display_current_datetime is implemented
+    if not callable(display_current_datetime):
+        raise NameError("display_current_datetime function is not defined or callable")
+
+    # Check if calculate_future_date is implemented
+    if not callable(calculate_future_date):
+        raise NameError("calculate_future_date function is not defined or callable")
+    
+    # Display current date and time
+    display_current_datetime()
+
+    # Prompt user for number of days to add
     try:
-        # Ask the user for the temperature and conversion type
-        temp = float(input("Enter the temperature value: "))
-        conversion_type = input("Choose conversion type (F to C / C to F): ").strip().upper()
-
-        # Perform the conversion based on user's input
-        if conversion_type == "F TO C":
-            result = fahrenheit_to_celsius(temp)
-            print(f"{temp} Fahrenheit is {result:.2f} Celsius.")
-        elif conversion_type == "C TO F":
-            result = celsius_to_fahrenheit(temp)
-            print(f"{temp} Celsius is {result:.2f} Fahrenheit.")
-        else:
-            print("Invalid conversion type. Please choose 'F to C' or 'C to F'.")
-
+        days_to_add = int(input("Enter the number of days to add to the current date: "))
     except ValueError:
-        print("Invalid input. Please enter a valid numeric temperature.")
+        print("Invalid input. Please enter an integer.")
+        return
 
+    # Calculate and display the future date
+    calculate_future_date(days_to_add)
+
+# Run the main function
 if __name__ == "__main__":
     main()
