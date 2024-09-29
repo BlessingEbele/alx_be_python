@@ -4,11 +4,8 @@
 
 
 
-# fns_and_dsa/temp_conversion_tool.py
-
-# Global conversion factors
-FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9
-CELSIUS_TO_FAHRENHEIT_FACTOR = 9 / 5  # Correct definition added here
+# Global conversion factor
+FAHRENHEIT_TO_CELSIUS_FACTOR = 5 / 9  # Only this conversion factor is defined
 
 def fahrenheit_to_celsius(fahrenheit):
     """Converts Fahrenheit to Celsius."""
@@ -17,7 +14,8 @@ def fahrenheit_to_celsius(fahrenheit):
 
 def celsius_to_fahrenheit(celsius):
     """Converts Celsius to Fahrenheit."""
-    fahrenheit = celsius * CELSIUS_TO_FAHRENHEIT_FACTOR + 32
+    # Directly using the formula without defining CELSIUS_TO_FAHRENHEIT_FACTOR
+    fahrenheit = celsius * (9 / 5) + 32
     return fahrenheit
 
 def main():
