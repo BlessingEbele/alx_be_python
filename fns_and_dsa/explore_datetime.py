@@ -2,14 +2,16 @@
 # date: 29/09/2024
 # purpose: This script will demonstrate your ability to use the datetime module for handling dates and times in Python.
 
-# Check that datetime module is imported
-import datetime
+# fns_and_dsa/explore_datetime.py
+
+# Check that datetime module is imported using 'from datetime'
+from datetime import datetime, timedelta
 
 # Part 1: Display the current date and time
 def display_current_datetime():
     """Displays the current date and time in a formatted string."""
     # Save the current date and time
-    current_date = datetime.datetime.now()
+    current_date = datetime.now()
 
     # Format the current date and time as 'YYYY-MM-DD HH:MM:SS'
     formatted_date = current_date.strftime("%Y-%m-%d %H:%M:%S")
@@ -22,10 +24,10 @@ def display_current_datetime():
 def calculate_future_date(days_to_add):
     """Calculates the future date by adding the specified number of days."""
     # Save the current date
-    current_date = datetime.datetime.now().date()
+    current_date = datetime.now().date()
 
     # Add the specified number of days to the current date using timedelta
-    future_date = current_date + datetime.timedelta(days=days_to_add)
+    future_date = current_date + timedelta(days=days_to_add)
 
     # Format the future date as 'YYYY-MM-DD'
     formatted_future_date = future_date.strftime("%Y-%m-%d")
