@@ -15,16 +15,27 @@ def display_menu():
     print("3. View List")
     print("4. Exit")
 
+# fns_and_dsa/shopping_list_manager.py
+
+def display_menu():
+    """Displays the menu options for the shopping list manager."""
+    # Display the menu title
+    print(f"Shopping List Manager")
+    print("1. Add Item")
+    print("2. Remove Item")
+    print("3. View List")
+    print("4. Exit")
+
 def main():
     """Main function that runs the shopping list manager."""
     
-    # Check that the shopping list is implemented as a list (array)
+    # Ensure that shopping_list is a list
     shopping_list = []
     if not isinstance(shopping_list, list):
         raise TypeError("shopping_list must be a list")
 
     while True:
-        # Check if display_menu function exists and is callable
+        # Check if display_menu function is callable
         if not callable(display_menu):
             raise NameError("display_menu function is not defined or callable")
         
@@ -40,8 +51,8 @@ def main():
 
         # Handle the user's choice
         if choice == 1:
-            # Prompt the user to add an item
-            item = input("Enter the name of the item to add: ").strip()
+            # Prompt the user to add an item using the exact input statement requested
+            item = input("Enter the item to add: ").strip()
             shopping_list.append(item)
             print(f"'{item}' has been added to the shopping list.")
 
