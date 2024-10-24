@@ -17,7 +17,7 @@ def convert_to_celsius(fahrenheit):
 
 # Function to convert Celsius to Fahrenheit
 def convert_to_fahrenheit(celsius):
-    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTOR) + FREEZING_POINT_DIFFERENCE
+    return (celsius * CELSIUS_TO_FAHRENHEIT_FACTORS) + FREEZING_POINT_DIFFERENCE
 
 # Main function to interact with the user
 def main():
